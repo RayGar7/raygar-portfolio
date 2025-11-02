@@ -31,9 +31,6 @@ jobs:
       - name: Build 🔧
         run: npm run build
 
-      - name: List out directory contents (debug)
-        run: ls -la out/
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
