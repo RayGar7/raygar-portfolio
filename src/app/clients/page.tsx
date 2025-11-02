@@ -1,3 +1,5 @@
+import { getImagePath } from '../utils/imagePath';
+
 // Sample client data - showcasing HP experience and other work
 const clients = [
   {
@@ -5,7 +7,7 @@ const clients = [
     name: "Hewlett-Packard (HP, Inc)",
     role: "Software Developer",
     period: "2022 - 2025",
-    logo: "/logos/hp.png",
+    logo: getImagePath("/logos/hp.png"),
     description: `Developed enterprise-scale web applications serving millions of users globally. Worked with cross-functional teams to deliver high-quality software solutions using modern web technologies. I was hired as a contractor through BoldTek, LLC.`,
     technologies: ["JavaScript", "Angular", ".NET"],
     achievements: [
@@ -21,7 +23,7 @@ const clients = [
     name: "Foxconn Czech Partnership",
     role: "Software Engineer (HP Assignment)",
     period: "2023 - 2025",
-    logo: "/logos/Foxconn.png",
+    logo: getImagePath("/logos/Foxconn.png"),
     description: `International collaboration project as part of my HP employment, working indirectly with Foxconn's Czech-Slovakian office on supply chain test engineering initiatives. Served as a software engineer, coordinating with international project managers and industrial engineers while developing cutting-edge solutions.`,
     technologies: ["Apache Kafka", "Docker", "Redis", "Microservices", "Enterprise Architecture"],
     achievements: [
@@ -42,7 +44,7 @@ const clients = [
     name: "Intuit QuickBooks Online",
     role: "Technical Support Specialist",
     period: "2023 - Present",
-    logo: "/logos/qb.png",
+    logo: getImagePath("/logos/qb.png"),
     description: `Providing expert technical support for QuickBooks Online, helping thousands of small business owners resolve complex accounting software issues. Working directly with enterprise-level systems and customer-facing solutions.`,
     technologies: ["QuickBooks Online", "Customer Support Tools", "Troubleshooting", "API Integration", "Database Management"],
     achievements: [

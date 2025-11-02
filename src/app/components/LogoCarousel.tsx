@@ -1,23 +1,24 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { getImagePath } from '../utils/imagePath';
 
 const companies = [
   {
     name: 'Hewlett-Packard (HP)',
-    logo: '/logos/hp.png',
+    logo: getImagePath('/logos/hp.png'),
     role: 'Software Developer',
     badge: 'Fortune 500'
   },
   {
     name: 'Foxconn Technology',
-    logo: '/logos/Foxconn.png',
+    logo: getImagePath('/logos/Foxconn.png'),
     role: 'International Collaboration',
     badge: 'Fortune 500'
   },
   {
     name: 'Intuit QuickBooks',
-    logo: '/logos/qb.png',
+    logo: getImagePath('/logos/qb.png'),
     role: 'Technical Support Specialist',
     badge: 'Fortune 500'
   }
