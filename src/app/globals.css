@@ -1,26 +1,156 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* HP Professional Theme - Showcasing HP Experience */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --hp-blue: #0095d5;
+  --hp-blue-dark: #007bb5;
+  --hp-blue-darker: #005a87;
+  --hp-white: #ffffff;
+  --hp-background: #e1eeff;
+  --hp-light-gray: #f8f9fa;
+  --hp-dark-gray: #333333;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme inline {
+  --color-background: var(--hp-background);
+  --color-foreground: var(--hp-dark-gray);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--hp-dark-gray);
+  font-size: 1.25em;
+  background: var(--hp-background);
+  background: -webkit-linear-gradient(135deg, var(--hp-background), #f0f6ff);
+  background: linear-gradient(135deg, var(--hp-background), #f0f6ff);
+  min-height: 100vh;
+}
+
+/* Card styling - HP Professional Design */
+.portfolio-card {
+  border: 3px solid var(--hp-blue);
+  background-color: var(--hp-white);
+  margin-bottom: 40px;
+  padding: 25px 50px 75px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 149, 213, 0.1), 0 1px 3px rgba(0, 149, 213, 0.08);
+}
+
+@media screen and (max-width: 991px) {
+  .portfolio-card {
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Navigation styling - HP Brand Colors */
+.portfolio-nav {
+  background: var(--hp-blue);
+  border-bottom: 4px solid var(--hp-blue-dark);
+  background: -webkit-linear-gradient(135deg, var(--hp-blue), var(--hp-blue-dark));
+  background: linear-gradient(135deg, var(--hp-blue), var(--hp-blue-dark));
+  height: 70px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 10px rgba(0, 149, 213, 0.3);
+}
+
+.nav-link {
+  color: var(--hp-white);
+  font-size: 22px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: var(--hp-white);
+  text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
+  transform: translateY(-1px);
+}
+
+/* Typography - HP Professional */
+h1 {
+  color: var(--hp-blue);
+  text-align: center;
+  font-weight: 700;
+}
+
+h2 {
+  color: var(--hp-blue-dark);
+  font-weight: 600;
+}
+
+/* Links */
+a {
+  color: var(--hp-blue);
+  font-weight: 500;
+}
+
+a:hover {
+  color: var(--hp-blue-dark);
+  text-shadow: 0px 0px 2px rgba(0, 149, 213, 0.3);
+  text-decoration: none;
+}
+
+/* HR styling */
+hr {
+  background-color: var(--hp-blue);
+  height: 3px;
+  border: none;
+  border-radius: 2px;
+}
+
+/* Email icon styling - HP Blue Theme */
+.mail-link {
+  font-size: 2em;
+  color: var(--hp-blue);
+  transition: all 0.3s ease;
+}
+
+.mail-link:hover {
+  color: var(--hp-blue-dark);
+  text-shadow: 0px 0px 8px rgba(0, 149, 213, 0.6);
+  transform: scale(1.1);
+}
+
+@media screen and (min-width: 992px) {
+  .mail-link {
+    font-size: 5em;
+  }
+}
+
+/* Project icons - HP Professional Style */
+.project-icon {
+  font-size: 4em;
+  margin-right: 1em;
+  color: var(--hp-blue);
+  transition: all 0.3s ease;
+}
+
+.project-icon:hover {
+  color: var(--hp-blue-dark);
+  transform: scale(1.1);
+}
+
+.project-icon.disabled {
+  color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 991px) {
+  body {
+    font-size: 1.1em;
+  }
+}
+
+#page-container {
+  background-color: var(--hp-background);
+  transition: all 0.3s ease;
 }
