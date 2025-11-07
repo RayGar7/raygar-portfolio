@@ -1,5 +1,4 @@
-// Utility to handle image paths with GitHub Pages base path
+// Utility to handle image paths - now using custom domain (no base path needed)
 export function getImagePath(path: string): string {
-  const basePath = process.env.NODE_ENV === 'production' ? '/raygar-portfolio' : '';
-  return `${basePath}${path}`;
+  return path;
 }

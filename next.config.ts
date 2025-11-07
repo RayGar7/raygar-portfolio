@@ -6,8 +6,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: '/raygar-portfolio',
-  assetPrefix: '/raygar-portfolio',
   reactCompiler: true,
 };
 
