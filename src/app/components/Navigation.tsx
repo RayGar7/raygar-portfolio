@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
-import { getImagePath } from '../utils/imagePath';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -40,7 +39,7 @@ export default function Navigation() {
         <div className="flex items-center justify-center flex-1">
           <Link href="/" className="flex items-center">
             <img 
-              src={getImagePath("/logos/rg-hp-logo.png")} 
+              src="/logos/rg-hp-logo.png" 
               alt="RayGar Portfolio Logo" 
               className="h-16 w-auto hover:scale-105 transition-transform"
             />

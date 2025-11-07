@@ -1,6 +1,5 @@
 import BlogPreview from './components/BlogPreview';
 import LogoCarousel from './components/LogoCarousel';
-import { getImagePath } from './utils/imagePath';
 
 export default function Home() {
   return (
@@ -25,7 +24,7 @@ export default function Home() {
             <div className="mb-6 md:mb-0 md:mr-8">
               <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
                 <img
-                  src={getImagePath("/logos/small-companies/raw-xocolatl.jpg")}
+                  src="/logos/small-companies/raw-xocolatl.jpg"
                   alt="Raw Xocolatl logo"
                   className="w-32 h-32 md:w-40 md:h-40 object-contain"
                 />
