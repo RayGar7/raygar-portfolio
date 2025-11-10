@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { getAllSearchableData, searchItems, getItemsByType, SearchableItem } from '../utils/searchData';
 import BlogImageCarousel from '../components/BlogImageCarousel';
@@ -186,7 +186,7 @@ const SearchResultItem = ({ item, searchTerm }: SearchResultItemProps) => {
   return null;
 };
 
-export default function SearchPage() {
+function SearchContent() {
   const searchParams = useSearchParams();
   const [searchTerm, setSearchTerm] = useState('');
   const [allItems] = useState(getAllSearchableData());
@@ -347,5 +347,37 @@ export default function SearchPage() {
         )}
       </div>
     </main>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <div className="py-8">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold flex items-center mb-4">
+              Search Results
+              <div className="ml-4 h-1 flex-1 bg-gradient-to-r from-[#0095d5] to-transparent rounded"></div>
+            </h1>
+            <div className="relative mb-4">
+              <input
+                type="text"
+                disabled
+                placeholder="Loading search..."
+                className="w-full px-4 py-3 pr-12 text-lg border border-gray-300 rounded-lg bg-gray-100"
+              />
+              <i className="fas fa-spinner fa-spin absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+            </div>
+          </div>
+          <div className="text-center py-12">
+            <i className="fas fa-spinner fa-spin text-4xl text-gray-300 mb-4"></i>
+            <p className="text-gray-500">Loading search functionality...</p>
+          </div>
+        </div>
+      </div>
+    }>
+      <SearchContent />
+    </Suspense>
   );
 }
