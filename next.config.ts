@@ -5,8 +5,10 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/raygar-portfolio' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/raygar-portfolio/' : '',
+  // Only add basePath if you're deploying to a subdirectory (username.github.io/repo-name)
+  // Remove these lines if deploying to username.github.io directly
+  basePath: '/raygar-portfolio',
+  assetPrefix: '/raygar-portfolio/',
 }
 
 module.exports = nextConfig
