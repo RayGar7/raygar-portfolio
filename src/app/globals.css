@@ -153,4 +153,8 @@ hr {
 #page-container {
   background-color: var(--hp-background);
   transition: all 0.3s ease;
+  background-image: url('/circuit-background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
 }

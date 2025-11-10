@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useState } from 'react';
+import GlobalSearch from './GlobalSearch';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -32,6 +33,9 @@ export default function Navigation() {
             <Link href="/clients" className="nav-link block md:inline-block py-2 md:py-0">
               Clients
             </Link>
+            <Link href="/search" className="nav-link block md:hidden py-2 md:py-0">
+              <i className="fas fa-search mr-2"></i>Search
+            </Link>
           </div>
         </div>
 
@@ -46,22 +50,10 @@ export default function Navigation() {
           </Link>
         </div>
 
-        {/* Right section - Search form */}
-        <form className="hidden md:flex items-center space-x-2" action="/search/">
-          <input
-            className="px-3 py-2 rounded-lg text-gray-700 placeholder-gray-400 border-2 border-white focus:border-blue-200 focus:outline-none"
-            type="search"
-            name="q"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button
-            className="px-4 py-2 bg-white text-[#0095d5] rounded-lg font-semibold hover:bg-blue-50 transition-all transform hover:scale-105"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
+        {/* Right section - Search */}
+        <div className="hidden md:block">
+          <GlobalSearch className="w-64" />
+        </div>
       </div>
     </nav>
   );
