@@ -57,6 +57,21 @@ The migration was challenging but rewarding. NextJS offers much better performan
       '/blog/selling-raw-xocolatl.jpg'
     ],
   },
+  {
+    id: 3,
+    title: "Promoted for QuickBooks in About Two Month",
+    content: `This is a true story of how I was promoted from a position in about a month. Firstly, I was hired as a tech support agent for the project Quickbooks Online at a call center company that outsources customer support roles.
+     During training, I try my best to lock in and learn as much of the material as possible. As it relates to the Quickbooks Online product. Let me tell you people. Quickbooks Online is a very powerful tool. Yes, it's very complicated. It has a lot of bells and whistles, but I have seen first hand how. People with zero experience in business accounting. Have leveraged the tools from Quickbooks Online to build successful empires. 
+     Throughout my time in training and in my first weeks of calls. I paid every attention to. What my customers calling in were doing that led them to become successful with this product. 
+     I can now S say that when the day comes that I want to own my own company, have my own employees, I have the tools needed. To be in good terms with the IRS. To keep track of my expenses. To invoice my clients. To manage my cash flow. And to make sure that come tax season, I have everything in order to file my taxes correctly and on time.
+     Now back to my story of how I was promoted in about two months. So after my first month of calls, I was already getting positive feedback from my quality analysts on my calls. I was also getting great customer satisfaction survey results from my customers.
+     Thankfully, this is an environment where such accomplishments do not go unnoticed. In fact, they were celebrated and it was a matter of time before someone higher up the ladder took notice of my performance. My hire date was effective September 25, 2025. And my promotion date was effective November 12, 2025. Thus totalling 1 month, two weeks, and 3 days.
+     My new responsibility includes. Sharing what worked with others. Helping new hires get up to speed faster. Assisting with difficult calls. And being a role model for others to follow.Mind you, this is something that I take very serious. `,
+    publishDate: "2021-04-15",
+    images: [
+      '/logos/quickbooks.svg'
+    ],
+  },
 ];
 
 export default function BlogPage() {
