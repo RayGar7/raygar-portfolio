@@ -42,16 +42,12 @@ These experiences - from building customer-facing diagnostic tools to factory op
   },
   {
     id: 2,
-    title: "Sellling for Raw Xocolatl",
-    content: `Moving from Djano templates to NextJS components requires understanding how React works. Here's what I learned during my portfolio migration.
-
-The biggest difference is the templating system. Django uses template inheritance with blocks, while React uses component composition. Instead of extending a base template, you create reusable components.
-
-Django template syntax like {% for %} and {% if %} becomes JavaScript map() and conditional rendering in React. Variables are no longer surrounded by {{ }}, but are JavaScript expressions in JSX.
-
-Styling also changes significantly. Instead of linking CSS files in your base template, you can use CSS modules, styled-components, or utility frameworks like Tailwind.
-
-The migration was challenging but rewarding. NextJS offers much better performance and a more modern development experience.`,
+    title: "Selling for Raw Xocolatl",
+    content: `
+      Alongisde building a website for my client, I also offered services as a vendor for Raw Xocolatl, a small local chocolate company and selling their handmade products at farmers markets and community events. My responsibilities included setting up tables, engaging with customers, explaining the craft behind the products, processing payments and managing inventory. This experience taught me essential skills in customer service, sales and adaptability—learning that selling isn't about pushing products, but about connecting with people and understanding their needs. The communication and problem-solving skills I developed there translate directly to my work today, whether I'm explaining technical concepts to clients or adapting to different project requirements.
+      
+      Lastly, I would love to sell your product too!
+      `,
     publishDate: "2021-04-15",
     images: [
       '/blog/selling-raw-xocolatl.jpg'
@@ -66,7 +62,7 @@ The migration was challenging but rewarding. NextJS offers much better performan
      I can now S say that when the day comes that I want to own my own company, have my own employees, I have the tools needed. To be in good terms with the IRS. To keep track of my expenses. To invoice my clients. To manage my cash flow. And to make sure that come tax season, I have everything in order to file my taxes correctly and on time.
      Now back to my story of how I was promoted in about two months. So after my first month of calls, I was already getting positive feedback from my quality analysts on my calls. I was also getting great customer satisfaction survey results from my customers.
      Thankfully, this is an environment where such accomplishments do not go unnoticed. In fact, they were celebrated and it was a matter of time before someone higher up the ladder took notice of my performance. My hire date was effective September 25, 2025. And my promotion date was effective November 12, 2025. Thus totalling 1 month, two weeks, and 3 days.
-     My new responsibility includes. Sharing what worked with others. Helping new hires get up to speed faster. Assisting with difficult calls. And being a role model for others to follow.Mind you, this is something that I take very serious. `,
+     My new responsibility includes sharing what worked with others, helping new hires get up to speed faster, assisting with difficult calls. And being a role model for others to follow. All of these are responsibilites I am looking forward to exercising the best to my potential. `,
     publishDate: "2021-04-15",
     images: [
       '/logos/quickbooks.svg'
