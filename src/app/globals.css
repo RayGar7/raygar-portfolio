@@ -150,11 +150,54 @@ hr {
   }
 }
 
-#page-container {
-  background-color: var(--hp-background);
-  transition: all 0.3s ease;
-  background-image: url('/circuit-background.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
+/* Circuit Background Animations */
+.circuit-node {
+  filter: url(#glow);
+}
+
+.pulse-1 {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.pulse-2 {
+  animation: pulse 2s ease-in-out 0.5s infinite;
+}
+
+.pulse-3 {
+  animation: pulse 2s ease-in-out 1s infinite;
+}
+
+.circuit-line {
+  animation: fadeInOut 4s ease-in-out infinite;
+}
+
+.circuit-chip {
+  animation: chipPulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes chipPulse {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
 }
