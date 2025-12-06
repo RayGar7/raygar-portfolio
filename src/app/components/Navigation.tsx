@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { useState } from 'react';
-import GlobalSearch from './GlobalSearch';
+import Link from "next/link";
+import { useState } from "react";
+import GlobalSearch from "./GlobalSearch";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,20 +20,45 @@ export default function Navigation() {
             <i className="fa fa-bars"></i>
           </button>
 
-          <div className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center md:space-x-8 absolute md:relative top-full md:top-0 left-0 right-0 md:left-auto md:right-auto bg-inherit md:bg-transparent p-4 md:p-0`}>
-            <Link href="/" className="nav-link block md:inline-block py-2 md:py-0">
+          <div
+            className={`${
+              isMenuOpen ? "block" : "hidden"
+            } md:flex md:items-center md:space-x-8 absolute md:relative top-full md:top-0 left-0 right-0 md:left-auto md:right-auto bg-inherit md:bg-transparent p-4 md:p-0`}
+          >
+            <Link
+              href="/"
+              className="nav-link block md:inline-block py-2 md:py-0"
+            >
               Home
             </Link>
-            <Link href="/blog" className="nav-link block md:inline-block py-2 md:py-0">
+            <Link
+              href="/blog"
+              className="nav-link block md:inline-block py-2 md:py-0"
+            >
               Blog
             </Link>
-            <Link href="/projects" className="nav-link block md:inline-block py-2 md:py-0">
+            <Link
+              href="/projects"
+              className="nav-link block md:inline-block py-2 md:py-0"
+            >
               Projects
             </Link>
-            <Link href="/clients" className="nav-link block md:inline-block py-2 md:py-0">
+            <Link
+              href="/clients"
+              className="nav-link block md:inline-block py-2 md:py-0"
+            >
               Clients
             </Link>
-            <Link href="/search" className="nav-link block md:hidden py-2 md:py-0">
+            <Link
+              href="/contact"
+              className="nav-link block md:inline-block py-2 md:py-0"
+            >
+              Contact
+            </Link>
+            <Link
+              href="/search"
+              className="nav-link block md:hidden py-2 md:py-0"
+            >
               <i className="fas fa-search mr-2"></i>Search
             </Link>
           </div>
@@ -42,9 +67,9 @@ export default function Navigation() {
         {/* Center section - Portfolio Logo */}
         <div className="flex items-center justify-center flex-1">
           <Link href="/" className="flex items-center">
-            <img 
-              src="/logos/rg-hp-logo.png" 
-              alt="RayGar Portfolio Logo" 
+            <img
+              src="/logos/rg-hp-logo.png"
+              alt="RayGar Portfolio Logo"
               className="h-16 w-auto hover:scale-105 transition-transform"
             />
           </Link>
