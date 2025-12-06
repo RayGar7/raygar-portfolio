@@ -12,6 +12,7 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    console.log("Form Data:", formData);
   };
 
   const handleChange = (
@@ -116,7 +117,7 @@ export default function ContactPage() {
               {/* Submit button */}
               <button
                 type="submit"
-                className="w-full bg-[var(--kw-red)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--kw-red-dark)] transition-colors"
+                className="w-full bg-[var(--hp-blue-darker)] text-white py-3 rounded-lg font-semibold hover:bg-[var(--hp-blue-dark)] transition-colors"
               >
                 Send Message
               </button>
