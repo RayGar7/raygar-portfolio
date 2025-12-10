@@ -36,7 +36,8 @@ body {
   margin-bottom: 40px;
   padding: 25px 50px 75px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 149, 213, 0.1), 0 1px 3px rgba(0, 149, 213, 0.08);
+  box-shadow: 0 4px 6px rgba(0, 149, 213, 0.1),
+    0 1px 3px rgba(0, 149, 213, 0.08);
 }
 
 @media screen and (max-width: 991px) {
@@ -50,7 +51,11 @@ body {
 .portfolio-nav {
   background: var(--hp-blue);
   border-bottom: 4px solid var(--hp-blue-dark);
-  background: -webkit-linear-gradient(135deg, var(--hp-blue), var(--hp-blue-dark));
+  background: -webkit-linear-gradient(
+    135deg,
+    var(--hp-blue),
+    var(--hp-blue-dark)
+  );
   background: linear-gradient(135deg, var(--hp-blue), var(--hp-blue-dark));
   height: 70px;
   text-transform: uppercase;
@@ -173,7 +178,8 @@ hr {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.6;
   }
   50% {
@@ -182,7 +188,8 @@ hr {
 }
 
 @keyframes fadeInOut {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.4;
   }
   50% {
@@ -191,7 +198,8 @@ hr {
 }
 
 @keyframes chipPulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.5;
   }
   50% {

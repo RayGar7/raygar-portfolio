@@ -28,7 +28,6 @@ export default function ContactPage() {
       });
 
       if (response.ok) {
-        console.log("Email sent successfully");
         toast.success("Message sent successfully!");
         // Reset form
         setFormData({
