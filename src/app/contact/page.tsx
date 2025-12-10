@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export default function ContactPage() {
   const router = useRouter();
@@ -28,6 +29,7 @@ export default function ContactPage() {
 
       if (response.ok) {
         console.log("Email sent successfully");
+        toast.success("Message sent successfully!");
         // Reset form
         setFormData({
           name: "",
@@ -39,6 +41,7 @@ export default function ContactPage() {
         router.push("/");
       } else {
         console.error("Failed to send email");
+        toast.error("Failed to send message");
       }
     } catch (error) {
       console.error("Error:", error);
