@@ -3,8 +3,6 @@
 require("dotenv").config();
 const sgMail = require("@sendgrid/mail");
 
-console.log("Environment variable:", process.env.SENDGRID_API_KEY);
-
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 // sgMail.setDataResidency('eu');
 // uncomment the above line if you are sending mail using a regional EU subuser

@@ -12,20 +12,37 @@ export default function ContactPage() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Form Data:", formData);
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      message: "",
-    });
+    // Send to API route
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    // Redirect to home page
-    router.push("/");
+      if (response.ok) {
+        console.log("Email sent successfully");
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        // Redirect to home page
+        router.push("/");
+      } else {
+        console.error("Failed to send email");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   const handleChange = (
@@ -123,7 +140,7 @@ export default function ContactPage() {
                   value={formData.message}
                   onChange={handleChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--kw-red)] focus:border-transparent resize-none bg-white"
-                  placeholder="Tell me about your real estate needs..."
+                  placeholder="Tell me how we can work together..."
                 />
               </div>
 
