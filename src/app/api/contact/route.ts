@@ -11,13 +11,14 @@ export async function POST(request: Request) {
     const msg = {
       to: "rgarcia.7770@gmail.com",
       from: "ray@raygardev.com",
-      subject: "New Contact Form Submission",
+      subject: "raygardev.com - New Contact Form Submission",
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
-      html: `<strong>New Contact Form Submission</strong><br><br>
-             <strong>Name:</strong> ${name}<br>
-             <strong>Email:</strong> ${email}<br>
-             <strong>Phone:</strong> ${phone}<br>
-             <strong>Message:</strong> ${message}`,
+      html: `<strong>New Contact Form Submission</strong><br>
+            <strong>raygardev.com</strong><br><br>
+            <strong>Name:</strong> ${name}<br>
+            <strong>Email:</strong> ${email}<br>
+            <strong>Phone:</strong> ${phone}<br>
+            <strong>Message:</strong> ${message}`,
     };
 
     await sgMail.send(msg);
