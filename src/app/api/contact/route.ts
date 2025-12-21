@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import axios from "axios";
 
 const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
@@ -6,10 +7,30 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, phone, message } = body;
+    const { name, email, phone, message, token } = body;
+
+    // Verify reCAPTCHA token
+    if (!token) {
+      return NextResponse.json(
+        { error: "reCAPTCHA token not found" },
+        { status: 400 }
+      );
+    }
+
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY;
+    const verifyResponse = await axios.post(
+      `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${token}`
+    );
+
+    if (!verifyResponse.data.success) {
+      return NextResponse.json(
+        { error: "reCAPTCHA verification failed" },
+        { status: 400 }
+      );
+    }
 
     const msg = {
-      to: "rgarcia.7770@gmail.com",
+      to: "raygar1923@outlook.com",
       from: "ray@raygardev.com",
       subject: "raygardev.com - New Contact Form Submission",
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,

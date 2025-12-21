@@ -1,11 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function ContactPage() {
   const router = useRouter();
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,7 +17,15 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
+
+    // Get reCAPTCHA token
+    const token = await recaptchaRef.current?.executeAsync();
+    recaptchaRef.current?.reset();
+
+    if (!token) {
+      toast.error("Please complete the reCAPTCHA verification");
+      return;
+    }
 
     // Send to API route
     try {
@@ -24,7 +34,10 @@ export default function ContactPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          token, // Include the reCAPTCHA token
+        }),
       });
 
       if (response.ok) {
@@ -40,10 +53,12 @@ export default function ContactPage() {
         router.push("/");
       } else {
         console.error("Failed to send email");
+        const data = await response.json();
         toast.error("Failed to send message");
       }
     } catch (error) {
       console.error("Error:", error);
+      toast.error("An error occurred");
     }
   };
 
@@ -86,7 +101,6 @@ export default function ContactPage() {
                   placeholder="John Doe"
                 />
               </div>
-
               {/* Email */}
               <div>
                 <label
@@ -106,7 +120,6 @@ export default function ContactPage() {
                   placeholder="john@example.com"
                 />
               </div>
-
               {/* Phone */}
               <div>
                 <label
@@ -125,7 +138,6 @@ export default function ContactPage() {
                   placeholder="(555) 123-4567"
                 />
               </div>
-
               {/* Message */}
               <div>
                 <label
@@ -146,6 +158,12 @@ export default function ContactPage() {
                 />
               </div>
 
+              {/* reCAPTCHA - invisible */}
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                size="invisible"
+                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+              />
               {/* Submit button */}
               <button
                 type="submit"
